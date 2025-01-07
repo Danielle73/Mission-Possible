@@ -25,7 +25,7 @@ body {
   
   /* Task card styles */
   .task-card {
-    background-color: #ffffff;
+    background-color: rgba(246,238,227,1);
     border-radius: 8px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     padding: 20px;
