@@ -7,7 +7,9 @@ function Task(props){
         <h2>{props.name}</h2>
         <p>{props.completed}</p>
         <p>{props.description}</p>
-        <p>{props.priority}</p>
+        <p className={`priority-${props.priority.toLowerCase()}`}>
+        Priority: {props.priority}
+        </p>
         </div>
         </div>
         </>
