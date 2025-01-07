@@ -2,10 +2,14 @@
 function Task(props){
     return ( 
         <>
-        <h1>{props.name}</h1>
+        <div className="task-card">
+        <div className="task-items">
+        <h2>{props.name}</h2>
         <p>{props.completed}</p>
         <p>{props.description}</p>
         <p>{props.priority}</p>
+        </div>
+        </div>
         </>
      );
 }

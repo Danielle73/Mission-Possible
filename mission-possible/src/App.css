@@ -1,0 +1,81 @@
+/* Base styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content:space-evenly;
+    /* flex-direction: column; */
+    /* align-items: center; */
+  }
+  
+  /* App container */
+  .App {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: center;
+  }
+  
+  h1 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Task card styles */
+  .task-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 15px;
+    text-align: left;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .task-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .task-items h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 0 0 10px;
+  }
+  
+  .task-items p {
+    font-size: 1rem;
+    color: #666;
+    margin: 5px 0;
+  }
+  
+  /* Priority styles */
+  .task-items p.priority-low {
+    color: green;
+  }
+  
+  .task-items p.priority-medium {
+    color: orange;
+  }
+  
+  .task-items p.priority-high {
+    color: red;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 600px) {
+    .task-card {
+      padding: 15px;
+    }
+  
+    .task-items h2 {
+      font-size: 1.25rem;
+    }
+  
+    .task-items p {
+      font-size: 0.9rem;
+    }
+  }
+  

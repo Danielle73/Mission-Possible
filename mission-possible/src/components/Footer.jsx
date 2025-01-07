@@ -4,8 +4,9 @@ const currentYear = new Date().getFullYear();
 
     return (
        <>
-       
+       <div className="footer">
        <p>Copyright {currentYear}</p>
+       </div>
        
        </>       
     )
