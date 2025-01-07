@@ -1,6 +1,7 @@
 import './App.css'
 import Task from './components/Task'
 import tasks from './taskData'
+import Footer from './components/Footer'
 
 function createTask (taskEntry){
 
@@ -20,6 +21,7 @@ function App() {
   return (
     <>
     {tasks.map(createTask)}
+    <Footer />
     </>
   )
 }
