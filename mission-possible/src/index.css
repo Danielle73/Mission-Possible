@@ -15,6 +15,13 @@ h1 {
     margin-top: 0px;
 }
 
+.header-description{
+    margin: 0px;
+    font-family: "Pacifico", serif;
+    font-weight: 200;
+}
+
+
 .header ,
 .footer{
     text-align: center;
