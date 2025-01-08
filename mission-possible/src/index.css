@@ -11,8 +11,18 @@ h1 {
     font-weight: 400;
     font-style: normal;
     text-align: center;
+    font-size: 55px;
+    margin-top: 0px;
 }
 
+.header ,
 .footer{
     text-align: center;
+    background-color: rgba(246,238,227,0.25);
+    margin-bottom: 0px;
+}
+
+.footer p {
+    margin-bottom: 0;
+    padding: 10px;
 }

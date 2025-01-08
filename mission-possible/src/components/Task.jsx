@@ -2,6 +2,7 @@
 function Task(props){
     return ( 
         <>
+        <div className="task-container">
         <div className="task-card">
         <div className="task-items">
         <h2>{props.name}</h2>
@@ -12,6 +13,8 @@ function Task(props){
         </p>
         </div>
         </div>
+        </div>
+        
         </>
      );
 }

@@ -4,10 +4,10 @@ body {
     background-color: #f4f4f9;
     margin: 0;
     padding: 0;
-    display: flex;
+    /* display: flex;
     justify-content:space-evenly;
-    /* flex-direction: column; */
-    /* align-items: center; */
+    flex-direction:row;
+    align-items: center; */
   }
   
   /* App container */
@@ -23,9 +23,21 @@ body {
     margin-bottom: 20px;
   }
   
+
+  .task-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows cards to wrap to the next line */
+    gap: 20px; /* Space between cards */
+    justify-content: flex-start; /* Align items to the left */
+    padding: 10px;
+}
+
   /* Task card styles */
   .task-card {
-    background-color: rgba(246,238,227,1);
+    /* background-color: rgba(246,238,227,1); */
+    background-image: url("https://images.rawpixel.com/image_social_square/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTEwL2pvYjEzNzMtYmFja2dyb3VuZC0wMS5qcGc.jpg");
+    background-position: center;
+    background-size:contain;
     border-radius: 8px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     padding: 20px;

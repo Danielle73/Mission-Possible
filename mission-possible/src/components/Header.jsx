@@ -1,8 +1,9 @@
 function Header(){
     return (
         <>
-        <h1>Mission Possible</h1>
-        <p>Procrastinate no longer!</p>
+        <div className="header">
+        <h1>Mission Possible 📝 </h1>
+        </div>
         </>
     )
 }
