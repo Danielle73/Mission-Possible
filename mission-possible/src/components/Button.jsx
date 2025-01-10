@@ -1,9 +1,18 @@
-function Button(){
-    return (
-        <>
-        <button>click me</button>
-        </>
-    )
-}
+// import { useState } from "react"
 
-export default Button
+// function Button(){
+
+// const [completed, setCompleted] = useState(false)
+
+// function completeTask(){
+    
+// }
+
+//     return (
+//         <>
+//         <button>click me</button>
+//         </>
+//     )
+// }
+
+// export default Button
