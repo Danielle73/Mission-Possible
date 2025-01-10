@@ -1,4 +1,6 @@
 /* eslint-disable react/prop-types */
+import Button from "./Button";
+
 function Task(props){
     return ( 
         <>
@@ -11,6 +13,7 @@ function Task(props){
         <p className={`priority-${props.priority.toLowerCase()}`}>
         Priority: {props.priority}
         </p>
+        <Button />
         </div>
         </div>
         </div>
