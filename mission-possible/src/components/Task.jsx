@@ -22,7 +22,7 @@ function Task(props){
         <p className={`priority-${props.priority.toLowerCase()}`}>
         Priority: {props.priority}
         </p>
-        <button onClick={isCompleted}>Complete</button>
+        <button onClick={isCompleted} className="button">Complete</button>
         </div>
         </div>
         </div>
