@@ -112,6 +112,11 @@ body {
   background-color: #97f4a6;
 }
 
+.delete:hover {
+  background-color: red;
+
+}
+
 .button:active {
   box-shadow: #422800 2px 2px 0 0;
   transform: translate(2px, 2px);
