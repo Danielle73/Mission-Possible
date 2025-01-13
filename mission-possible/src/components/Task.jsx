@@ -23,6 +23,7 @@ function Task(props){
         Priority: {props.priority}
         </p>
         <button onClick={isCompleted} className="button">Complete</button>
+        <button className="button">Delete</button>
         </div>
         </div>
         </div>
