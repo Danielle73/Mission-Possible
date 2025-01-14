@@ -2,6 +2,7 @@
 // import Button from "./Button";
 
 import { useState } from "react";
+import tasks from "../taskData";
 
 function Task(props){
 
@@ -11,9 +12,19 @@ function Task(props){
        setCompleted(!completed); 
     };
 
-    function isDeleted(){
-      alert("Delete this Task?")
+   //  function isDeleted(){
+   //    alert("Delete this Task?")
+   //    filter()
+   //  }
+
+   const [deletedTasks, setDeletedTasks] = useState(tasks)
+
+    
+    function deleteTask(id) {
+      const updatedTasks = deletedTasks.filter(task => task.id !== id);
+      setDeletedTasks(updatedTasks);
     }
+    
 
     return ( 
         <>
@@ -27,7 +38,7 @@ function Task(props){
         Priority: {props.priority}
         </p>
         <button onClick={isCompleted} className="button">Complete</button>
-        <button onClick={isDeleted} className="button delete">Delete</button>
+        <button onClick={() => deleteTask(props.id)} className="button delete">Delete</button>
         </div>
         </div>
         </div>
