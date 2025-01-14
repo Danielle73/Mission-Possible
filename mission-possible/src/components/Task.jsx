@@ -11,6 +11,10 @@ function Task(props){
        setCompleted(!completed); 
     };
 
+    function isDeleted(){
+      alert("Delete this Task?")
+    }
+
     return ( 
         <>
         <div className="task-container">
@@ -23,7 +27,7 @@ function Task(props){
         Priority: {props.priority}
         </p>
         <button onClick={isCompleted} className="button">Complete</button>
-        <button className="button delete">Delete</button>
+        <button onClick={isDeleted} className="button delete">Delete</button>
         </div>
         </div>
         </div>
