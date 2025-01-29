@@ -29,6 +29,12 @@ h1 {
     margin-bottom: 0px;
 }
 
+.button-container {
+    display: flex;
+    justify-content: center; 
+    margin-top: 20px; 
+  }
+
 .new-task {
   border: none;
   border-radius: 12px;

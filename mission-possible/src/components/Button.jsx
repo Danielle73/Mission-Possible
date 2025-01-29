@@ -1,7 +1,9 @@
 function Button(){
     return (
         <>
-        <button className="new-task">click me</button>
+        <div className="button-container">
+        <button className="new-task">Add Task</button>
+        </div>
         </>
     )
 }
