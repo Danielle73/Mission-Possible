@@ -3,16 +3,18 @@ import Task from './components/Task'
 import tasks from './taskData'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import Button from './components/Button'
 
 
 
 function App() {
 
-  return (
+return (
     <>
     <Header />
-    {tasks.map( (taskEntry) => {
+    <Button />
 
+    {tasks.map( (taskEntry) => {
 return(
   <Task 
   key = {taskEntry.id}
