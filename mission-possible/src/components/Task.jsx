@@ -5,7 +5,7 @@ function Task({ id, name, description, priority, completed, deleteTask }) {
     const [isCompleted, setIsCompleted] = useState(completed);
 
     return (
-        <div className="task-container">
+        <div>
             <div className={`task-card ${isCompleted ? "completed" : ""}`}>
                 <div className="task-items">
                     <h2 style={{ textDecoration: isCompleted ? "line-through" : "none" }}>

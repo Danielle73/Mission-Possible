@@ -12,6 +12,7 @@ function TaskList() {
 
     return (
         <>
+        <div className="task-container">
             {tasks.map((task) => (
                 <Task
                     key={task.id}
@@ -23,6 +24,7 @@ function TaskList() {
                     deleteTask={deleteTask}
                 />
             ))}
+        </div>
         </>
     );
 }
