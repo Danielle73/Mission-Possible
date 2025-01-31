@@ -5,13 +5,13 @@ import tasks from './taskData'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Button from './components/Button'
-import taskData from './taskData'
+// import taskData from './taskData'
 
 
 
 function App() {
 
-  const[tasks, setTasks] = useState(taskData);
+  const[tasks, setTasks] = useState([]);
 
   const deleteTask = (id) => {
     const updatedTasks = tasks.filter((task) => task.id !== id);
