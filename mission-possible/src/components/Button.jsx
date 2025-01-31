@@ -1,24 +1,32 @@
 import { useState } from "react";
 
 function Button({ setItems }) {
-  const [task, setTask] = useState(""); 
+  const [taskName, setTaskName] = useState(""); 
 
   function handleChange(event) {
-    setTask(event.target.value); 
+    setTaskName(event.target.value); 
   }
 
   function addItem() {
-    if (task.trim() === "") {
+    if (taskName.trim() === "") {
       return; 
     }
 
-    setItems((prevItems) => [...prevItems, task.trim()]); 
-    setTask(""); 
+    const newTask = {
+      id: Date.now(), 
+      name: taskName.trim(),
+      description: "No description", 
+      priority: "Medium", 
+      completed: false, 
+    };
+
+    setItems((prevItems) => [...prevItems, newTask]); 
+    setTaskName(""); 
   }
 
   return (
     <>
-      <input onChange={handleChange} type="text" value={task} placeholder="Enter a task" />
+      <input onChange={handleChange} type="text" value={taskName} placeholder="Enter a task" />
 
       <div className="button-container">
         <button onClick={addItem} className="new-task">Add Task</button>

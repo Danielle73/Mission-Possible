@@ -1,45 +1,34 @@
-import { useState } from 'react'
-import './App.css'
-import Task from './components/Task'
-import tasks from './taskData'
-import Header from './components/Header'
-import Footer from './components/Footer'
-import Button from './components/Button'
-// import taskData from './taskData'
-
-
+import { useState } from "react";
+import "./App.css";
+import Task from "./components/Task";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Button from "./components/Button";
 
 function App() {
+  const [tasks, setTasks] = useState([]); 
 
-  const[tasks, setTasks] = useState([]);
-
-  const deleteTask = (id) => {
-    const updatedTasks = tasks.filter((task) => task.id !== id);
-    setTasks(updatedTasks);
-};
-
-
-return (
+  return (
     <>
-    <Header />
-    <Button setTasks = {setTasks}/>
+      <Header />
+      <Button setItems={setTasks} /> 
+      <div className="task-container">
+        {tasks.map((task) => (
+          <Task
+            key={task.id} 
+            id={task.id}
+            name={task.name}
+            description={task.description}
+            priority={task.priority}
+            completed={task.completed}
+            deleteTask={(id) => setTasks(tasks.filter((task) => task.id !== id))} 
+          />
+        ))}
+      </div>
 
-    {tasks.map( (taskEntry) => {
-return(
-  <Task 
-  key = {taskEntry.id}
-  id = {taskEntry.id}
-  name = {taskEntry.name}
-  completed = {taskEntry.completed}
-  description = {taskEntry.description}
-  priority = {taskEntry.priority}
-  deleteTask={deleteTask}
-  />
-)
-})}
-    <Footer />
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
