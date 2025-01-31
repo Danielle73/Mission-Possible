@@ -11,6 +11,12 @@ function handleChange(event) {
     setTask(newValue);
   }
 
+  function addItem() {
+    setItems((prevValue) => {
+      return [...prevValue, task];
+    });
+  }
+  
     return (
         <>
         <input onChange={handleChange} type="text" value={task} />
