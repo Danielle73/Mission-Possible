@@ -1,22 +1,22 @@
 import {useState} from React;
 
-function Button(){
+function Button({setTask}){
 
 const [task, setTask] = useState("");
-const [items, setItems] = useState([]);
 
-function handleChange(event) {
-    const newValue = event.target.value;
-
-    setTask(newValue);
+function addItem() {
+  if (task.trim() === "") { 
+      return;
   }
 
-  function addItem() {
-    setItems((prevValue) => {
-      return [...prevValue, task];
-    });
-  }
-  
+  setItems((prevItems) => [
+      ...prevItems, 
+      task 
+  ]);
+
+  setTask(""); 
+}
+
     return (
         <>
         <input onChange={handleChange} type="text" value={task} />
