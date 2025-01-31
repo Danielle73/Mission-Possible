@@ -1,31 +1,30 @@
-import {useState} from React;
+import { useState } from "react";
 
-function Button({setTask}){
+function Button({ setItems }) {
+  const [task, setTask] = useState(""); 
 
-const [task, setTask] = useState("");
-
-function addItem() {
-  if (task.trim() === "") { 
-      return;
+  function handleChange(event) {
+    setTask(event.target.value); 
   }
 
-  setItems((prevItems) => [
-      ...prevItems, 
-      task 
-  ]);
+  function addItem() {
+    if (task.trim() === "") {
+      return; 
+    }
 
-  setTask(""); 
-}
+    setItems((prevItems) => [...prevItems, task.trim()]); 
+    setTask(""); 
+  }
 
-    return (
-        <>
-        <input onChange={handleChange} type="text" value={task} />
+  return (
+    <>
+      <input onChange={handleChange} type="text" value={task} placeholder="Enter a task" />
 
-        <div className="button-container">
+      <div className="button-container">
         <button onClick={addItem} className="new-task">Add Task</button>
-        </div>
-        </>
-    )
+      </div>
+    </>
+  );
 }
 
-export default Button
+export default Button;
