@@ -3,6 +3,7 @@ import { useState } from "react";
 function Button({ setItems }) {
   const [taskName, setTaskName] = useState(""); 
   const [taskDescription, setTaskDescription] = useState("");
+  const [taskPriority, setTaskPriority] = useState("Medium")
 
   function handleChange(event) {
     setTaskName(event.target.value); 
@@ -10,6 +11,10 @@ function Button({ setItems }) {
 
   function handleDescriptionChange(event) {
     setTaskDescription(event.target.value); 
+  }
+
+  function handlePriortyChange(event){
+    setTaskPriority(event.target.value);
   }
 
   function addItem() {
@@ -21,7 +26,7 @@ function Button({ setItems }) {
       id: Date.now(), 
       name: taskName.trim(),
       description: taskDescription.trim() || "No description", 
-      priority: "Medium", 
+      priority: taskPriority, 
       completed: false, 
     };
 
