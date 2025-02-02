@@ -33,6 +33,7 @@ function Button({ setItems }) {
     setItems((prevItems) => [...prevItems, newTask]); 
     setTaskName(""); 
     setTaskDescription("");
+    setTaskPriority("Medium");
   }
 
   return (
@@ -42,6 +43,12 @@ function Button({ setItems }) {
         <button onClick= {addItem}  className="new-task">Add Task</button>
         <input onChange={handleChange} type="text" value={taskName} placeholder="Enter a task" />
         <textarea onChange={handleDescriptionChange} placeholder="Enter a description"></textarea>
+        <select onChange={handlePriortyChange} value={taskPriority}> 
+        <option value="Low">Low</option>
+        <option value="Medium">Medium</option>
+        <option value="High">High</option>
+        </select>
+
       </div>
     </>
   );
