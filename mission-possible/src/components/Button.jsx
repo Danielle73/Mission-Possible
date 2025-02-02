@@ -3,7 +3,7 @@ import { useState } from "react";
 function Button({ setItems }) {
   const [taskName, setTaskName] = useState(""); 
   const [taskDescription, setTaskDescription] = useState("");
-  const [taskPriority, setTaskPriority] = useState("Medium")
+  const [taskPriority, setTaskPriority] = useState("")
 
   function handleChange(event) {
     setTaskName(event.target.value); 
@@ -41,13 +41,16 @@ function Button({ setItems }) {
 
       <div className="button-container">
         <button onClick= {addItem}  className="new-task">Add Task</button>
+        <div className="task-maker-container">
         <input onChange={handleChange} type="text" value={taskName} placeholder="Enter a task" />
         <textarea onChange={handleDescriptionChange} value={taskDescription} placeholder="Enter a description"></textarea>
         <select onChange={handlePriortyChange} value={taskPriority}> 
+        <option value="" disabled>Priority Level</option>
         <option value="Low">Low</option>
         <option value="Medium">Medium</option>
         <option value="High">High</option>
         </select>
+        </div>
 
       </div>
     </>
