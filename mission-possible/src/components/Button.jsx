@@ -42,7 +42,7 @@ function Button({ setItems }) {
       <div className="button-container">
         <button onClick= {addItem}  className="new-task">Add Task</button>
         <input onChange={handleChange} type="text" value={taskName} placeholder="Enter a task" />
-        <textarea onChange={handleDescriptionChange} placeholder="Enter a description"></textarea>
+        <textarea onChange={handleDescriptionChange} value={taskDescription} placeholder="Enter a description"></textarea>
         <select onChange={handlePriortyChange} value={taskPriority}> 
         <option value="Low">Low</option>
         <option value="Medium">Medium</option>
