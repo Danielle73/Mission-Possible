@@ -40,7 +40,6 @@ function Button({ setItems }) {
     <>
 
       <div className="button-container">
-        <button onClick= {addItem}  className="new-task">Add Task</button>
         <div className="task-maker-container">
         <input onChange={handleChange} type="text" value={taskName} placeholder="Enter a task" />
         <textarea onChange={handleDescriptionChange} value={taskDescription} placeholder="Enter a description"></textarea>
@@ -50,6 +49,7 @@ function Button({ setItems }) {
         <option value="Medium">Medium</option>
         <option value="High">High</option>
         </select>
+        <button onClick= {addItem}  className="new-task">Add Task</button>
         </div>
 
       </div>
