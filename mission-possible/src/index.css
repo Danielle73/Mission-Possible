@@ -21,7 +21,6 @@ h1 {
     font-weight: 200;
 }
 
-
 .header ,
 .footer{
     text-align: center;
@@ -36,7 +35,7 @@ h1 {
   }
 
 .new-task {
-  background-color: green;
+  background-color: rgb(40, 232, 40);
   border: none;
   box-sizing: border-box;
   color: #000000;
