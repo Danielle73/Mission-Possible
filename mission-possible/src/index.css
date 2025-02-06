@@ -86,6 +86,15 @@ h1 {
   }
 }
 
+.footer {
+  text-align: center;
+  background-color: rgba(246,238,227,0.25);
+  padding: 10px;
+  width: 100%;
+  margin-top: auto; /* Ensures it stays at the bottom */
+}
+
+
 
 .footer p {
     font-family: "Pacifico", serif;

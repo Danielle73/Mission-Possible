@@ -1,5 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
+import '/src/App.css'
+
 
 function Task({ id, name, description, priority, completed, deleteTask }) {
     const [isCompleted, setIsCompleted] = useState(completed);
@@ -8,12 +10,11 @@ function Task({ id, name, description, priority, completed, deleteTask }) {
         <div>
             <div className={`task-card ${isCompleted ? "completed" : ""}`}>
                 <div className="task-items">
-                    <h2 style={{ textDecoration: isCompleted ? "line-through" : "none" }}>
-                        {name}
-                    </h2>
-                    <p style={{ textDecoration: isCompleted ? "line-through" : "none" }}>
-                        {description}
-                    </p>
+
+                    <h2 className={isCompleted ? "crossed-line" : ""}>{name}</h2>
+                    
+                    <p className={isCompleted ? "crossed-line" : ""}>{description}</p>
+
                     <p className={`priority-${priority.toLowerCase()}`}>
                         Priority: {priority}
                     </p>
