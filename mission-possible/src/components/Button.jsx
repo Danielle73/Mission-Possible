@@ -1,12 +1,13 @@
 import { useState } from "react";
 
+// eslint-disable-next-line react/prop-types
 function Button({ setItems }) {
-  const [taskName, setTaskName] = useState(""); 
+  const [taskTitle, setTaskTitle] = useState(""); 
   const [taskDescription, setTaskDescription] = useState("");
   const [taskPriority, setTaskPriority] = useState("")
 
   function handleChange(event) {
-    setTaskName(event.target.value); 
+    setTaskTitle(event.target.value); 
   }
 
   function handleDescriptionChange(event) {
@@ -18,22 +19,44 @@ function Button({ setItems }) {
   }
 
   function addItem() {
-    if (taskName.trim() === "") {
+    if (taskTitle.trim() === "") {
       return; 
     } 
 
     const newTask = {
-      id: Date.now(), 
-      name: taskName.trim(),
+      title: taskTitle.trim(),
       description: taskDescription.trim() || "No description", 
       priority: taskPriority, 
-      completed: false, 
     };
 
-    setItems((prevItems) => [...prevItems, newTask]); 
-    setTaskName(""); 
-    setTaskDescription("");
-    setTaskPriority("Medium");
+    fetch(`${import.meta.env.VITE_API_URL}/tasks`, {
+      method:'POST',
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newTask),
+    })
+
+    .then((res) => {
+      if(!res.ok){
+        throw new Error("Failed to create task");
+      }
+      return res.json();
+    })
+
+    .then((createdTask) => {
+      setItems((prevItems) => [...prevItems, createdTask]); 
+      setTaskTitle(""); 
+      setTaskDescription("");
+      setTaskPriority("Medium");
+    })
+
+    .catch((error) => {
+      console.error("Error creating task:", error)
+    })
+
+
+   
   }
 
   return (
@@ -41,7 +64,7 @@ function Button({ setItems }) {
 
       <div className="button-container">
         <div className="task-maker-container">
-        <input onChange={handleChange} type="text" value={taskName} placeholder="Enter a task" />
+        <input onChange={handleChange} type="text" value={taskTitle} placeholder="Enter a task" />
         <textarea onChange={handleDescriptionChange} value={taskDescription} placeholder="Enter a description"></textarea>
         <select onChange={handlePriortyChange} value={taskPriority}> 
         <option value="" disabled>Priority Level</option>
