@@ -64,8 +64,8 @@ export default tasks;
 3. **Delete Tasks**: Click the "Delete" button to remove a task from the list.
 
 ## Future Enhancements
-- Add functionality to add new tasks dynamically.
-- Persist tasks using a backend or local storage.
+- ~~Add functionality to add new tasks dynamically.~~ ✔️
+- ~~Persist tasks using a backend or local storage.~~ ✔️
 - Improve the UI with additional styling or animations.
 
 ## License
