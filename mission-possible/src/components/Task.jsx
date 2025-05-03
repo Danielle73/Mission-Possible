@@ -3,7 +3,8 @@ import { useState } from "react";
 import '/src/App.css'
 
 
-function Task({ id, name, description, priority, completed, deleteTask }) {
+
+function Task({ id, title, description, priority, completed, deleteTask }) {
     const [isCompleted, setIsCompleted] = useState(completed);
 
     return (
@@ -11,7 +12,7 @@ function Task({ id, name, description, priority, completed, deleteTask }) {
             <div className={`task-card ${isCompleted ? "completed" : ""}`}>
                 <div className="task-items">
 
-                    <h2 className={isCompleted ? "crossed-line" : ""}>{name}</h2>
+                    <h2 className={isCompleted ? "crossed-line" : ""}>{title}</h2>
                     
                     <p className={isCompleted ? "crossed-line" : ""}>{description}</p>
 
